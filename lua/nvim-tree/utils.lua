@@ -345,4 +345,10 @@ function M.is_in_displayed_buffer(path)
   return false
 end
 
+function M.inject_node(f)
+  return function()
+    f(require("nvim-tree.lib").get_node_at_cursor())
+  end
+end
+
 return M
